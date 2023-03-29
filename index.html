@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body class="d-flex flex-column vh-100">
+    <div class="container">
+      <header></header>
+    </div>
+    <main class="flex-shrink-0">
+      <div class="container">
+        <h1>Euler mejorado</h1>
+
+        <form id="myForm">
+          <div class="input-group mb-3">
+            <span class="input-group-text">y'</span>
+            <div class="form-floating">
+              <input
+                type="text"
+                class="form-control"
+                id="yPrime"
+                placeholder="a"
+              />
+              <label for="yPrime">Ejemplo: x+1</label>
+            </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">X<sub>0</sub></span>
+            <div class="form-floating">
+              <input type="text" class="form-control" id="x0" placeholder="a" />
+              <label for="x0">Ejemplo: 1</label>
+            </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Y<sub>0</sub></span>
+            <div class="form-floating">
+              <input type="text" class="form-control" id="y0" placeholder="a" />
+              <label for="y0">Ejemplo: 1</label>
+            </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <span class="input-group-text">Y<sub>n</sub></span>
+            <div class="form-floating">
+              <input type="text" class="form-control" id="yn" placeholder="a" />
+              <label for="yn">Ejemplo: 1</label>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Calcular</button>
+        </form>
+
+        <h1>Resultado</h1>
+        <p id="output"></p>
+      </div>
+    </main>
+    <footer class="d-block mt-auto py-3 bg-light">
+      <div class="container">
+        <span class="text-muted">Footer</span>
+      </div>
+    </footer>
+  </body>
+
+  <script src="scripts/bootstrap.bundle.min.js"></script>
+  <script src="scripts/main.js"></script>
+</html>
