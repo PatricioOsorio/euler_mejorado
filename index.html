@@ -5,69 +5,144 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="styles/bootstrap.min.css" />
+
+    <!-- Icons Fontawesome cdn -->
+    <script
+      src="https://kit.fontawesome.com/56d0ffeffa.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Aos (animation library) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- My css -->
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body class="d-flex flex-column vh-100">
-    <div class="container">
-      <header></header>
-    </div>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg bg-primary shadow mb-3"
+        data-bs-theme="dark"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="#">Método de Euler mejorado</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse"
+            id="navbarSupportedContent"
+          ></div>
+        </div>
+      </nav>
+    </header>
     <main class="flex-shrink-0">
       <div class="container">
-        <h1>Euler mejorado</h1>
+        <section class="row shadow p-3 rounded" data-aos="fade-up">
+          <h1
+            class="display-5 fw-bold text-body-emphasis text-center text-primary mb-3"
+          >
+            Método de Euler mejorado
+          </h1>
 
-        <form id="myForm">
-          <div class="input-group mb-3">
-            <span class="input-group-text">y'</span>
-            <div class="form-floating">
-              <input
-                type="text"
-                class="form-control"
-                id="yPrime"
-                placeholder="a"
-              />
-              <label for="yPrime">Ejemplo: x+1</label>
+          <form id="myForm" class="col-lg-6 mb-5">
+            <div class="input-group mb-3" data-aos="fade-right">
+              <span class="input-group-text">y'</span>
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="yPrime"
+                  placeholder="a"
+                  required
+                />
+                <label for="yPrime">Ejemplo: x+1</label>
+              </div>
             </div>
-          </div>
 
-          <div class="input-group mb-3">
-            <span class="input-group-text">X<sub>0</sub></span>
-            <div class="form-floating">
-              <input type="text" class="form-control" id="x0" placeholder="a" />
-              <label for="x0">Ejemplo: 1</label>
+            <div class="input-group mb-3" data-aos="fade-right">
+              <span class="input-group-text">X<sub>0</sub></span>
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="x0"
+                  placeholder="a"
+                  required
+                />
+                <label for="x0">Ejemplo: 1</label>
+              </div>
             </div>
-          </div>
 
-          <div class="input-group mb-3">
-            <span class="input-group-text">Y<sub>0</sub></span>
-            <div class="form-floating">
-              <input type="text" class="form-control" id="y0" placeholder="a" />
-              <label for="y0">Ejemplo: 1</label>
+            <div class="input-group mb-3" data-aos="fade-right">
+              <span class="input-group-text">Y<sub>0</sub></span>
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="y0"
+                  placeholder="a"
+                  required
+                />
+                <label for="y0">Ejemplo: 1</label>
+              </div>
             </div>
-          </div>
 
-          <div class="input-group mb-3">
-            <span class="input-group-text">Y<sub>n</sub></span>
-            <div class="form-floating">
-              <input type="text" class="form-control" id="yn" placeholder="a" />
-              <label for="yn">Ejemplo: 1</label>
+            <div class="input-group mb-3" data-aos="fade-right">
+              <span class="input-group-text">Y<sub>n</sub></span>
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="yn"
+                  placeholder="a"
+                  required
+                />
+                <label for="yn">Ejemplo: 1</label>
+              </div>
             </div>
+
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane me-1"></i>Calcular
+            </button>
+            <button type="reset" class="btn btn-outline-secondary">
+              <i class="fas fa-broom me-1"></i>Borrar
+            </button>
+          </form>
+
+          <div class="col-lg-6" data-aos="fade-up">
+            <h2>Resultado</h2>
+            <p id="output"></p>
           </div>
-
-          <button type="submit" class="btn btn-primary">Calcular</button>
-        </form>
-
-        <h1>Resultado</h1>
-        <p id="output"></p>
+        </section>
       </div>
     </main>
     <footer class="d-block mt-auto py-3 bg-light">
       <div class="container">
-        <span class="text-muted">Footer</span>
+        <span class="text-muted">&copy; 2023</span>
       </div>
     </footer>
   </body>
 
   <script src="scripts/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="scripts/main.js"></script>
 </html>
