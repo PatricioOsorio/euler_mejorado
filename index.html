@@ -73,12 +73,12 @@
                   class="form-control"
                   id="yPrime"
                   placeholder="a"
+                  pattern="^[0-9()+\-*\/\[\]{}\sxy.]*$"
                   required
-                  value="2x-3y"
                 />
                 <label for="yPrime">Ejemplo: 2x-3y</label>
                 <div class="invalid-feedback">
-                  Please choose a username.
+                  Expresión inválida
                 </div>
               </div>
             </div>
@@ -87,18 +87,17 @@
               <span class="input-group-text">X<sub>0</sub></span>
               <div class="form-floating">
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
                   id="x0"
                   placeholder="a"
-                  pattern="^[0-9]{1,2}([,.][0-9]{1,2})?$"
+                  pattern="[0-9]+(\.[0-9]+)?"
                   required
-                  value="1"
                 />
                 <label for="x0">Ejemplo: 1</label>
-              </div>
-              <div class="invalid-feedback">
-                Please choose a username.
+                <div class="invalid-feedback">
+                  Valor inválido
+                </div>
               </div>
             </div>
 
@@ -106,15 +105,17 @@
               <span class="input-group-text">Y<sub>0</sub></span>
               <div class="form-floating">
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
                   id="y0"
                   placeholder="a"
-                  pattern="^[0-9]{1,2}([,.][0-9]{1,2})?$"
+                  pattern="[0-9]+(\.[0-9]+)?"
                   required
-                  value="0"
                 />
-                <label for="y0">Ejemplo: 0</label>
+                <label for="y0">Ejemplo: 5</label>
+                <div class="invalid-feedback">
+                  Valor inválido
+                </div>
               </div>
             </div>
 
@@ -122,15 +123,18 @@
               <span class="input-group-text">X</span>
               <div class="form-floating">
                 <input
-                  type="text"
+                  type="number"
                   class="form-control"
                   id="yn"
                   placeholder="a"
-                  pattern="^[0-9]{1,2}([,.][0-9]{1,2})?$"
+                  pattern="[0-9]+(\.[0-9]+)?"
+                  step="0.1"
                   required
-                  value="5"
                 />
-                <label for="yn">Ejemplo: 10</label>
+                <label for="yn">Ejemplo: 1.5</label>
+                <div class="invalid-feedback">
+                  Valor inválido
+                </div>
               </div>
             </div>
 
