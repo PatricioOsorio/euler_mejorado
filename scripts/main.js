@@ -28,6 +28,7 @@ const $output = document.querySelector('#output');
 // Listener of reset
 $form.addEventListener('reset', (e) => {
   $output.innerHTML = ``;
+  document.querySelector('#myForm').classList.remove('was-validated');
 });
 
 // Function of f'

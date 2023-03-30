@@ -57,14 +57,17 @@
     </header>
     <main class="flex-shrink-0">
       <div class="container">
-        <section class="row shadow p-3 rounded mb-5" data-aos="fade-up">
+        <section
+          class="row p-3 mb-5 rounded-3 border shadow-lg"
+          data-aos="fade-up"
+        >
           <h1
-            class="display-5 fw-bold text-body-emphasis text-center text-primary mb-3"
+            class="display-5 fw-bold text-body-emphasis text-center text-primary mb-4"
           >
             Método de Euler mejorado
           </h1>
 
-          <form id="myForm" class="col-lg-6 mb-5 needs-validation" >
+          <form id="myForm" class="col-lg-6 mb-5 needs-validation">
             <div class="input-group mb-3">
               <span class="input-group-text">y'</span>
               <div class="form-floating">
@@ -73,18 +76,17 @@
                   class="form-control"
                   id="yPrime"
                   placeholder="a"
-                  pattern="^[0-9()+\-*\/\[\]{}\sxy.]*$"
+                  pattern="^[0-9()+\-*\/\[\]{}\sxyXY.]*$"
+                  onkeyup="this.value = this.value.toLowerCase();"
                   required
                 />
                 <label for="yPrime">Ejemplo: 2x-3y</label>
-                <div class="invalid-feedback">
-                  Expresión inválida
-                </div>
+                <div class="invalid-feedback">Expresión inválida</div>
               </div>
             </div>
 
             <div class="input-group mb-3">
-              <span class="input-group-text">X<sub>0</sub></span>
+              <span class="input-group-text">x<sub>0</sub></span>
               <div class="form-floating">
                 <input
                   type="number"
@@ -95,14 +97,12 @@
                   required
                 />
                 <label for="x0">Ejemplo: 1</label>
-                <div class="invalid-feedback">
-                  Valor inválido
-                </div>
+                <div class="invalid-feedback">Valor inválido</div>
               </div>
             </div>
 
             <div class="input-group mb-3">
-              <span class="input-group-text">Y<sub>0</sub></span>
+              <span class="input-group-text">y<sub>0</sub></span>
               <div class="form-floating">
                 <input
                   type="number"
@@ -113,14 +113,12 @@
                   required
                 />
                 <label for="y0">Ejemplo: 5</label>
-                <div class="invalid-feedback">
-                  Valor inválido
-                </div>
+                <div class="invalid-feedback">Valor inválido</div>
               </div>
             </div>
 
             <div class="input-group mb-3">
-              <span class="input-group-text">X</span>
+              <span class="input-group-text">x</span>
               <div class="form-floating">
                 <input
                   type="number"
@@ -132,9 +130,7 @@
                   required
                 />
                 <label for="yn">Ejemplo: 1.5</label>
-                <div class="invalid-feedback">
-                  Valor inválido
-                </div>
+                <div class="invalid-feedback">Valor inválido</div>
               </div>
             </div>
 
@@ -146,9 +142,14 @@
             </button>
           </form>
 
-          <div class="col-lg-6">
-            <h2>Resultado</h2>
-            <p id="output"></p>
+          <div
+            class="col-lg-6 d-flex justify-content-center align-items-center align-content-center"
+          >
+            <!-- <h2 class="display-6">Resultado</h2> -->
+            <p
+              id="output"
+              class="lh-lg text-center bg-body-tertiary p-3 rounded"
+            ></p>
           </div>
         </section>
       </div>
@@ -165,10 +166,10 @@
 
   <!-- Aos js -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  
+
   <!-- Sweetalert js -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
+
   <!-- Math js -->
   <script src="https://cdn.jsdelivr.net/npm/mathjs@11.7.0/lib/browser/math.min.js"></script>
 
