@@ -3,8 +3,26 @@ document.addEventListener('DOMContentLoaded', (e) => {
   AOS.init();
 });
 
+// Toast
+const Toast = Swal.mixin({
+  toast: true,
+  position: 'top-end',
+  showConfirmButton: false,
+  timer: 5000,
+  timerProgressBar: true,
+  didOpen: (toast) => {
+    toast.addEventListener('mouseenter', Swal.stopTimer);
+    toast.addEventListener('mouseleave', Swal.resumeTimer);
+  },
+});
+
+// My form
 const $form = document.querySelector('#myForm');
 const $output = document.querySelector('#output');
+
+$form.addEventListener('reset', (e) => {
+  $output.innerHTML = ``;
+});
 
 $form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -28,14 +46,20 @@ $form.addEventListener('submit', (e) => {
       y = y + ((slope + slopePrime) * h) / 2;
       x = x + h;
     }
+
     return y;
   };
 
-  let yr = eulerMejorado(yPrimeText, x0, y0, yn, 1000);
+  let result;
 
-  $output.innerHTML = `El valor de y en el punto y<sub>n</sub> es ${yr}`;
-});
+  try {
+    result = eulerMejorado(yPrimeText, x0, y0, yn, 1000);
+  } catch (error) {
+    Toast.fire({
+      icon: 'error',
+      title: 'Ocurrió un error',
+    });
+  }
 
-$form.addEventListener('reset', (e) => {
-  $output.innerHTML = ``;
+  $output.innerHTML = `El valor de y en el punto y<sub>n</sub> es: <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill">${result}</span>`;
 });
