@@ -64,7 +64,7 @@
             Método de Euler mejorado
           </h1>
 
-          <form id="myForm" class="col-lg-6 mb-5">
+          <form id="myForm" class="col-lg-6 mb-5 needs-validation" >
             <div class="input-group mb-3">
               <span class="input-group-text">y'</span>
               <div class="form-floating">
@@ -76,6 +76,9 @@
                   required
                 />
                 <label for="yPrime">Ejemplo: 2x-3y</label>
+                <div class="invalid-feedback">
+                  Please choose a username.
+                </div>
               </div>
             </div>
 
@@ -87,9 +90,13 @@
                   class="form-control"
                   id="x0"
                   placeholder="a"
+                  pattern="^[0-9]{1,2}([,.][0-9]{1,2})?$"
                   required
                 />
                 <label for="x0">Ejemplo: 1</label>
+              </div>
+              <div class="invalid-feedback">
+                Please choose a username.
               </div>
             </div>
 
@@ -101,6 +108,7 @@
                   class="form-control"
                   id="y0"
                   placeholder="a"
+                  pattern="^[0-9]{1,2}([,.][0-9]{1,2})?$"
                   required
                 />
                 <label for="y0">Ejemplo: 0</label>
@@ -115,6 +123,7 @@
                   class="form-control"
                   id="yn"
                   placeholder="a"
+                  pattern="^[0-9]{1,2}([,.][0-9]{1,2})?$"
                   required
                 />
                 <label for="yn">Ejemplo: 10</label>

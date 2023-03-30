@@ -64,3 +64,8 @@ $form.addEventListener('submit', (e) => {
 
   $output.innerHTML = `El valor de y en el punto y<sub>n</sub> es: <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill">${result}</span>`;
 });
+
+// Validation
+document.addEventListener("input", (e) => {
+  document.querySelector("#myForm").classList.add("was-validated");
+});
