@@ -16,6 +16,12 @@ const Toast = Swal.mixin({
   },
 });
 
+// Validation
+document.addEventListener("input", (e) => {
+  document.querySelector("#myForm").classList.add("was-validated");
+});
+
+
 // My form
 const $form = document.querySelector('#myForm');
 const $output = document.querySelector('#output');
@@ -62,10 +68,6 @@ $form.addEventListener('submit', (e) => {
   }
  console.log(result);
 
-  $output.innerHTML = `El valor de y en el punto y<sub>n</sub> es: <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill">${result}</span>`;
+  $output.innerHTML = `El valor de y en el punto y<sub>${yn}</sub> es: <span class="badge bg-primary-subtle text-primary-emphasis rounded-pill fs-4">${result}</span>`;
 });
 
-// Validation
-document.addEventListener("input", (e) => {
-  document.querySelector("#myForm").classList.add("was-validated");
-});
